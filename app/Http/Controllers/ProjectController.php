@@ -8,17 +8,26 @@ class ProjectController extends Controller
 {
 	public function __construct()
     {
-        $this->db = \Mongo::get()->mo;
+        $this->collection = \Mongo::get()->mo->projects;
     }
 
+    public function index()
+    {
+    	$projects = $this->collection->find()->toArray();
+    	return view('project.index', compact('projects'));
+    }
+
+    public function create()
+    {
+    	return view('project.create');
+    }
     public function store(Request $request)
     {
-    	$collection = $this->db->projects
-		$insertOneResult = $collection->insertOne([
+		$insertOneResult = $this->collection->insertOne([
 		    'name' => $request->name,
 		    'details' => $request->details,
 		 ]);
-    	 
-    	 return back();
+
+    	 return redirect()->route('project.index');
     }
 }

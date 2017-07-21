@@ -18,6 +18,7 @@
 						<textarea name="details" class="form-control"></textarea>
 						<br>
 						<button class="btn btn-success">Submit</button>
+						<a href="{{route('project.index')}}" class="btn btn-warning">Cancel</a>
 					</div>
 				</div>
 
