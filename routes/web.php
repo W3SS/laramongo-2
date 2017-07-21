@@ -15,5 +15,8 @@
 // Route::get('api',['as' => 'api.wp', 'uses' => 'TestController@getJson']);
 
 Route::get('/', function () {
+	
 	return view('project.create');
 });
+
+Route::post('/create',['as' => 'project.store', 'uses' => 'ProjectController@store']);
