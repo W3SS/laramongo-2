@@ -6,9 +6,14 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+	public function __construct()
+    {
+        $this->db = \Mongo::get()->mo;
+    }
+
     public function store(Request $request)
     {
-    	$collection = \Mongo::get()->mo->projects;
+    	$collection = $this->db->projects
 		$insertOneResult = $collection->insertOne([
 		    'name' => $request->name,
 		    'details' => $request->details,
