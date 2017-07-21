@@ -2,12 +2,16 @@
 @section('title', 'Project')
 @section('content')
 
+
+<br>
+<br>
+<br>
 <div class="row">
 	<div class="col-md-6">
 		<a href="{{ route('project.create') }}" class="btn btn-success">Create</a>
-		<a href="" class="btn btn-success">Delete</a>
-		<a href="" class="btn btn-success">Edit</a>
-		<a href="" class="btn btn-success">View</a>
+		<a href="" class="btn btn-danger">Delete</a>
+		<a href="" class="btn btn-warning">Edit</a>
+		<a href="" class="btn btn-primary">View</a>
 	</div>
 </div>
 <h2>List all project</h2>
